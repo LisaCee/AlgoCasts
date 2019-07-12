@@ -10,12 +10,5 @@
     "testEnvironment": "node"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "eslint-config-airbnb": "^17.1.1"
-  },
-  "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3"
-  }
+  "license": "ISC"
 }
