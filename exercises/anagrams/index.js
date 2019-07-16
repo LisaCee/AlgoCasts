@@ -32,6 +32,8 @@
 //     }
 //     return charMap;
 // }
+
+//solution #2
 function anagrams(stringA, stringB) {
      return sorted(stringA) === sorted(stringB);
 }
