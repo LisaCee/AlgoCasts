@@ -21,7 +21,7 @@ function chunk(array, size) {
     // }
     // return solution;
 
-    // solution # 2
+    solution # 2
     let solution = [];
     let i = 0;
     while (i < array.length) {
@@ -29,6 +29,7 @@ function chunk(array, size) {
         i += size;
     }
     return solution;
+
 }
 
 module.exports = chunk;
