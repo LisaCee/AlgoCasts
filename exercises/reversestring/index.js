@@ -8,17 +8,37 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 // solution #1
+// built in method reduce
+// reduce starts with an empty string (end)
+// split string into array, 
+//reversed = accumulator
+// character = current letter
+// first letter added to string
+// second letter added to string before first letter
+// return reversed string
+
 // function reverse(str) {
-//   debugger;
 //   return str.split('').reduce(((reversed, character) => {
 //     return character + reversed;
 //   }), '');
 // }
+
+// solution #2
+// built in method reverse
+// split string into array
+// reverse the order of the letters in array
+// join them back together
+
 // function reverse(str) {
 //   return str.split('').reverse().join('')
 // }
 
-// solution #2
+// solution #3
+// let char of str
+// declare an empty string
+// for each letter in the original string,
+// starting at the beginning, add character to front of new string
+
 // function reverse(str) {
 //     let reversed = ""
 //     for(let character of str) {
@@ -28,6 +48,11 @@
 //   }
 
 // my solution
+// recursive solution, not as efficient, but looks cool
+// if the string is only 1 letter, return (base case)
+// otherwise, keep calling the reverse function by continuing to slice the first item and collecting them in reverse order
+// when the base case is met (only 1 letter) add that letter to the end of the other characters
+
 function reverse(str) {
     if (str.length < 2) return str;
     return reverse(str.slice(1)) + str[0]
