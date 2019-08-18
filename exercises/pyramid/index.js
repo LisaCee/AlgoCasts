@@ -18,7 +18,8 @@
 // function pyramid(n) {
 // for (let row = 0; row < n; row++) {
 //     let level = '';
-//     // cols = n * 2 - 1
+//equation to find how many columns, given the number of rows(n)
+//     cols = n * 2 - 1
 //     // find col center index
 //     let mid = Math.floor((2 * n  -1) / 2);
 //     for (let col = 0; col < 2* n - 1; col++){
@@ -39,16 +40,20 @@
 function pyramid(n, row=0, level='') {
     //base case
     if(row === n) return;
-
+    //check if string is correct amout of characters
+    // console log and call pyramid for the next row
     if(level.length === 2 * n -1) {
         console.log(level);
         return pyramid(n, row+1)
     }
     const mid = Math.floor((2 * n - 1) / 2);
+    // temporary variable to store string
     let add;
     if (mid - row <= level.length && mid + row >= level.length) {
         add = '#';
-    } else {add = ' '};
+    } 
+    // this else sequence  is required
+    else add = ' ';
     pyramid(n, row, level + add)
 }
 
