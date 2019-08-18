@@ -10,3 +10,8 @@ function reverseString(str) {
 }
 console.log(reverseString('Lisa'))
 // palindrome
+function palindrome(str) {
+    return str.split('').reverse().join('') === str;
+}
+
+console.log(palindrome('abba'))
