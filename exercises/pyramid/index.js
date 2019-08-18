@@ -14,23 +14,42 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
-    for (let row = 0; row < n; row++) {
-        let level = '';
-        // cols = n * 2 - 1
-        // find col center index
-        let mid = Math.floor((2 * n  -1) / 2);
-        for (let col = 0; col < 2* n - 1; col++){
-            // if col is greater than mid - row AND col is less that mid + row
-            // '#'
-            if (mid - row <= col && mid + row >= col) {
-                level += '#'
-            } else {
-                level += ' '
-            }
-        }
-        console.log(level)
+// solution # 1
+// function pyramid(n) {
+// for (let row = 0; row < n; row++) {
+//     let level = '';
+//     // cols = n * 2 - 1
+//     // find col center index
+//     let mid = Math.floor((2 * n  -1) / 2);
+//     for (let col = 0; col < 2* n - 1; col++){
+//         // if col is greater than mid - row AND col is less that mid + row
+//         // '#'
+//         if (mid - row <= col && mid + row >= col) {
+//             level += '#'
+//         } else {
+//             level += ' '
+//         }
+//     }
+//     console.log(level)
+// }
+// }
+
+// solution #2
+//recursive solution
+function pyramid(n, row=0, level='') {
+    //base case
+    if(row === n) return;
+
+    if(level.length === 2 * n -1) {
+        console.log(level);
+        return pyramid(n, row+1)
     }
+    const mid = Math.floor((2 * n - 1) / 2);
+    let add;
+    if (mid - row <= level.length && mid + row >= level.length) {
+        add = '#';
+    } else {add = ' '};
+    pyramid(n, row, level + add)
 }
 
 

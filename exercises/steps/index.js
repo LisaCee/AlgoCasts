@@ -17,7 +17,7 @@
 //       '### '
 //       '####'
 
-
+// recursive solution
 function steps(n) {
     //base case
     if (n === 0) return;
@@ -27,7 +27,7 @@ function steps(n) {
     steps(n - 1);
 }
 
-// recursive solution
+
 
 
 // first solution
