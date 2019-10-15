@@ -7,6 +7,26 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
+//go around # 2
+
+// function reverse(str) {
+//     let reversed = ''
+//     for (let i = str.length - 1; i > -1; i--) {
+//         reversed += str[i]
+//     }
+//     return reversed;
+// }
+
+function reverse(str) {
+    if (str === '') {
+        return ''
+    } else {
+        return reverse(str.slice(1)) + str[0];
+        //or
+        // return reverse(str.slice(1)) + str.charAt(0);
+    }
+}
+
 // solution #1
 // built in method reduce
 // reduce starts with an empty string (end)
@@ -53,9 +73,9 @@
 // otherwise, keep calling the reverse function by continuing to slice the first item and collecting them in reverse order
 // when the base case is met (only 1 letter) add that letter to the end of the other characters
 
-function reverse(str) {
-    if (str.length < 2) return str;
-    return reverse(str.slice(1)) + str[0]
-}
+// function reverse(str) {
+//     if (str.length < 2) return str;
+//     return reverse(str.slice(1)) + str[0]
+// }
 
 module.exports = reverse;
