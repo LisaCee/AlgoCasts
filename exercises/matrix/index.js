@@ -45,10 +45,10 @@ function matrix(n) {
             results[endRow][i] = counter;
             counter++;
         }
-        endCol--;
+        endRow--;
      
         //start column
-        for (let i = endRow; i <= startRow; i--) {
+        for (let i = endRow; i >= startRow; i--) {
             results[i][startCol] = counter;
             counter++
         }
