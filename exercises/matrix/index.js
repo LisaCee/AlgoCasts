@@ -16,26 +16,47 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
-    let results = []
-    let counter = 1
-    let start_row = 0
-    let end_row = n - 1
-    let start_col = 0
-    let end_col = n - 1
-    //while start_col <== end_col && start_row <== end_row
-    while (start_col <= end_col && start_row <= end_row){
-        //loop from start_col to end_col
-
-            //at results[start_row][counter], assign counter var
-            //increment counter
-        //increment start_row
-        //loop from start_row to end_row
-            //at results[i][end_col], assign counter var
-            // increment counter
-        //decrement end row
-
-        //repeat for other two sides
+    const results = [];
+    for (let i = 0; i < n; i++) {
+        results.push([]);
     }
+    let counter = 1;
+    let startCol = 0;
+    let endCol = n - 1;
+    let startRow = 0;
+    let endRow = n - 1;
+    
+    //while start_col <== end_col && start_row <== end_row
+    while (startCol <= endCol && startRow <= endRow) {
+        //top row
+        for (let i = startCol; i <= endCol; i++) {
+            results[startRow][i] = counter;
+            counter++;
+        }
+        startRow++;
+        //right column
+        for (let i = startRow; i <= endRow; i++) {
+            results[i][endCol] = counter;
+            counter++;
+        }
+        endCol--
+        //bottom row
+        for (let i = endCol; i >= startCol; i--) {
+            results[endRow][i] = counter;
+            counter++;
+        }
+        endCol--;
+     
+        //start column
+        for (let i = endRow; i <= startRow; i--) {
+            results[i][startCol] = counter;
+            counter++
+        }
+        startCol++
+    }
+    return results
+     
+    
 }
 
 module.exports = matrix;
