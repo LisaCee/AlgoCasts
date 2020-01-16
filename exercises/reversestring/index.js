@@ -17,14 +17,22 @@
 //     return reversed;
 // }
 
+// function reverse(str) {
+//     if (str === '') {
+//         return ''
+//     } else {
+//         return reverse(str.slice(1)) + str[0];
+//         //or
+//         // return reverse(str.slice(1)) + str.charAt(0);
+//     }
+// }
+
 function reverse(str) {
-    if (str === '') {
-        return ''
-    } else {
-        return reverse(str.slice(1)) + str[0];
-        //or
-        // return reverse(str.slice(1)) + str.charAt(0);
+    let reversed = '';
+    for (let char of str) {
+        reversed = char + reversed;
     }
+    return reversed;
 }
 
 // solution #1
