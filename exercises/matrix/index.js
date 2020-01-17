@@ -40,7 +40,7 @@ function matrix(n) {
             counter++
         }
         endCol--
-        for (let i = endCol; i <= startCol; i--) {
+        for (let i = endCol; i >= startCol; i--) {
             // bottom row
             results[endRow][i] = counter
             counter++
@@ -48,7 +48,7 @@ function matrix(n) {
         endRow--
         for (let i = endRow; i>= startRow; i--) {
             //first col
-            results[startCol][i] = counter;
+            results[i][startCol] = counter;
             counter++
         }
         startCol++
@@ -59,5 +59,5 @@ function matrix(n) {
     
 }
 
-matrix(3)
-// module.exports = matrix;
+
+module.exports = matrix;
