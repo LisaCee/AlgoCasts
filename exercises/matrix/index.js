@@ -16,47 +16,48 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
-    const results = [];
+    const results = []
     for (let i = 0; i < n; i++) {
-        results.push([]);
+        results.push([])
     }
-    let counter = 1;
-    let startCol = 0;
-    let endCol = n - 1;
-    let startRow = 0;
-    let endRow = n - 1;
-    
-    //while start_col <== end_col && start_row <== end_row
+    let counter = 1
+    // this counter will go from 1 - n
+    let startCol = 0
+    let startRow = 0
+    let endCol = n - 1
+    let endRow = n - 1
+
     while (startCol <= endCol && startRow <= endRow) {
-        //top row
         for (let i = startCol; i <= endCol; i++) {
-            results[startRow][i] = counter;
-            counter++;
+            // top row
+            results[startRow][i] = counter
+            counter++
         }
-        startRow++;
-        //right column
+        startRow++
         for (let i = startRow; i <= endRow; i++) {
-            results[i][endCol] = counter;
-            counter++;
+            // right col
+            results[i][endCol] = counter
+            counter++
         }
         endCol--
-        //bottom row
-        for (let i = endCol; i >= startCol; i--) {
-            results[endRow][i] = counter;
-            counter++;
+        for (let i = endCol; i <= startCol; i--) {
+            // bottom row
+            results[endRow][i] = counter
+            counter++
         }
-        endRow--;
-     
-        //start column
-        for (let i = endRow; i >= startRow; i--) {
-            results[i][startCol] = counter;
+        endRow--
+        for (let i = endRow; i>= startRow; i--) {
+            //first col
+            results[startCol][i] = counter;
             counter++
         }
         startCol++
+
     }
     return results
      
     
 }
 
-module.exports = matrix;
+matrix(3)
+// module.exports = matrix;
