@@ -58,7 +58,7 @@ function memoize(fn) {
     }
 }
 
-function slowFib(n) {
+function fib(n) {
 
     // recursive solution
     if (n < 2) {
@@ -70,6 +70,6 @@ function slowFib(n) {
     
 }
 
-const fib = memoize(slowFib)
+fib = memoize(fib)
 
 module.exports = fib;
