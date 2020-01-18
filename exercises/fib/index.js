@@ -17,11 +17,28 @@ function fib(n) {
     // return array[n]
 
     // recursive solution
-    if (n <= 2) {
-        return 1
+    // if (n < 2) {
+    //     return n
+    // } else {
+    //     return fib(n-1) + fib(n-2) 
+    // }
+
+    //memoization
+    let cache = {0:0, 1:1}
+    let i = 2
+    if (cache[n]) {
+        return cache[n]
     } else {
-        return fib(n-1) + fib(n-2) 
+        if (n < 2) {
+            return n
+        } else {
+            while (i <= n) {
+                cache[i] = cache[i-1] + cache[i-2]
+                i++
+            }
+        }
     }
+    return cache[n]
 }
 
 
